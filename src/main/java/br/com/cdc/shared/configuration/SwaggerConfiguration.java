@@ -19,7 +19,7 @@ public class SwaggerConfiguration {
 	public Docket api() {
 		Predicate<RequestHandler> basePackage = RequestHandlerSelectors.basePackage("br.com.cdc.apicdc");
 		Predicate<String> apiUrls = PathSelectors.ant("/api/**");
-		return new Docket(DocumentationType.SWAGGER_2).select().apis(basePackage).paths(apiUrls).paths(Predicates.not(PathSelectors.regex("/error.*"))).build();
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(basePackage).paths(apiUrls).build();
 
 	}
 }
